@@ -1,0 +1,51 @@
+import os
+os.system("cls")
+
+usuario_1 = "juan"
+contraseña_1 = "123"
+
+ingreso = input("Ingrese nombre de usuario : ")
+ingreso_contraseña = input("Ingrese la contraseña : ")
+
+procede = True
+
+while ingreso != usuario_1 or ingreso_contraseña != contraseña_1:
+    print("usuario o contraseña incorrecto")
+    ingresar = input("quiere registrarse (si/no) : ")
+    
+    if ingresar == "si":
+        nuevo_ingreso = input("ingrese nombre de usuario : ")
+        nueva_contraseña = input("ingrese contraseña : ")
+    elif ingresar == "no":
+        procede = False
+
+    else:
+        print("no se puede acceder al sitio")
+        procede = False
+
+#reemplazar break
+
+continuar = True
+
+while continuar == True and procede == True:
+    print("-----Proyecto/Tablas/Variables/Mostrar/Estadisticas/Salir-----")
+    menu = input("Ingrese su opcion: ")
+    match menu:
+        case "proyectos":
+            print("ingresaste a proyectos")
+        case "tablas":
+            print("ingresaste a tablas")          
+        case "variables":
+            print("ingresaste a variables")
+        case "mostrar":
+            print("ingresaste a mostrar")
+        case "estadistica":
+            print("ingresaste a estadistica")
+        case "salir":
+            print("saliendo....")
+            continuar = False
+        case _:
+            print("ingreso invalido")
+
+if continuar == False:
+    print("saliste del programa")
